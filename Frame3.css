@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    font-family:Montserrat, sans-serif;
+    box-sizing: border-box
+}
+
+
+/* menu bar */ 
+#starting-page{
+    margin-top: 80px;
+    min-height: 90vh;
+    display: flex;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    background: rgba(0, 0, 0, 1);
+ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-family: Mr Dafoe;
+    font-size: 2rem;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.navbar a{
+   font-size: 1.15rem;
+   color: aliceblue;
+   font-weight:500;
+   margin-left: 2.5rem;
+}
+
+#check{
+    display: none;
+}
+.icons{
+    right: 5%;
+    position: absolute;
+    font-size: 2.8rem;
+    color: aliceblue;
+    cursor: pointer;
+    display: none;
+}
+
+/* Bilder på tjänster och text */ 
+
+.rubrik{
+    margin: 30px 30px 10px ;
+    font-size: 2rem;
+}
+
+.tjanster-container 
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.bild-conatainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    
+}
+.bild-conatainer img{
+    width: 90%;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+
+ /* storlek på img och p divs*/
+
+ .bild-conatainer img{
+    width: 380px;
+}
+.tjanst-bild{ 
+    width: 380px;
+    }
+
+/*Breakpoints*/
+ 
+@media (max-width: 922px ){ 
+    .header{
+        padding: 1.3rem 5%;
+
+    }
+    
+    .menu{font-size: 35px;
+        padding-top: 40vh;
+        padding-left: 12px;
+    }
+
+    .bild-conatainer img{
+        width: 90%;
+    }
+    .tjanst-bild{ 
+        width: 250px;
+        }
+    
+}
+
+
+@media (max-width: 768px ){
+    /*menu bar */
+
+    .icons{
+        display:inline-flex
+    }
+
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+
+    .icons #close-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, 1);
+        transition: .3s ease;
+        overflow: hidden;
+    }
+
+    #check:checked~.navbar {
+        height: 15rem;
+    }
+   
+
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 3rem 0;
+        margin-bottom: 1rem;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: .3s ease;
+    }
+
+
+    #check:checked~.navbar {
+        transform: translateY(0);
+    }
+
+
+    .bild-conatainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tjanst-bild {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 20px;   
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+   
+}
+}
